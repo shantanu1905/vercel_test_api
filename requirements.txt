@@ -1,1 +1,15 @@
 fastapi 
+bcrypt
+cryptography
+email-validator
+fastapi
+passlib
+psycopg2-binary
+pydantic
+pydantic_core
+PyJWT
+SQLAlchemy
+python-dotenv
+uvicorn
+python-multipart
+aiofiles
