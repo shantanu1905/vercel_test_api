@@ -12,4 +12,3 @@ SQLAlchemy
 python-dotenv
 uvicorn
 python-multipart
-aiofiles
