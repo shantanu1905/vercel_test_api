@@ -20,3 +20,15 @@ class User(_database.Base):
     def verify_password(self, password: str):
         return _hash.bcrypt.verify(password, self.hashed_password)
 
+
+class Watchlist(_database.Base):
+    __tablename__ = "watchlists"
+    id = _sql.Column(_sql.Integer, primary_key=True, index=True)
+    user_id = _sql.Column(_sql.Integer, _sql.ForeignKey('users.id'), nullable=False)
+    stock_symbol = _sql.Column(_sql.String, nullable=False)
+    stock_name = _sql.Column(_sql.String, nullable=False)  
+    date_added = _sql.Column(_sql.DateTime, default=_dt.datetime.utcnow)
+
+    user = _orm.relationship("User", back_populates="watchlists")
+
+User.watchlists = _orm.relationship("Watchlist", order_by=Watchlist.id, back_populates="user")

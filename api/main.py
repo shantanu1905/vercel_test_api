@@ -3,13 +3,14 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from starlette.requests import Request
 from database import Base , engine
-from routers import auth
+from routers import auth , stock
 
 
 app = FastAPI()
 templates = Jinja2Templates(directory="templates")
 Base.metadata.create_all(engine)
 app.include_router(auth.router)
+app.include_router(stock.router)
 
 
 

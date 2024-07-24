@@ -35,3 +35,8 @@ class VerifyOtp(pydantic.BaseModel):
     otp: int
 
 
+class Watchlist(pydantic.BaseModel):
+    stock_symbol: str
+    stock_name: str
+
+

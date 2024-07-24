@@ -16,9 +16,9 @@ import os
 # Create an instance of the Logger class
 logger_instance = Logger()
 # Get a logger for your module
-logger = logger_instance.get_logger("ondc api")
+logger = logger_instance.get_logger("stock market api")
 router = APIRouter(
-    tags=["ondc"],)
+    tags=["authentication routes"],)
 
 
 # Retrieve environment variables
